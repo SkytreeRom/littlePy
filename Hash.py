@@ -19,6 +19,8 @@ def getHash(filename):
                 outHash[i][j]=1
     # outHash.resize(1,64)
     return outHash.reshape(1,64)
+def getHammingDistance(outList):
+    pass
 
 if __name__=='__main__':
     path='./data/'
@@ -29,7 +31,7 @@ if __name__=='__main__':
         w = csv.writer(f)
         for i in range(len(nameList)):
             hashValue=getHash(path+nameList[i]).tolist()
-            # outList.append([nameList[i],hashValue[0]])
+            outList.append([nameList[i],hashValue[0]])
             w.writerow([nameList[i], str(hashValue[0])])
             # w.writerow(['xx','xx'])
         print('FINISHED')
